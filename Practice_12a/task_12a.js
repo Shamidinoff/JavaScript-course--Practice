@@ -33,3 +33,16 @@ function filterEvenNumbers(arrayNum) {
 }
 
 console.log(filterEvenNumbers(numbers)); // Ожидаемый вывод: [2, 4, 6, 8, 10]
+
+// Задача 4: Напишите функцию getFullName, которая принимает объект с полями firstName и lastName и возвращает полное имя, объединяя значения этих полей.
+
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+};
+
+function getFullName(obj) {
+  return obj.firstName + " " + obj.lastName; // Обращаемся к свойствам объекта `obj`, а не `person`
+}
+
+console.log(getFullName(person)); // Ожидаемый вывод: 'John Doe'

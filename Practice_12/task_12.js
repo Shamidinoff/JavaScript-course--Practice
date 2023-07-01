@@ -27,3 +27,31 @@ function reverse(str) {
 // - CNY (юань) исчез из списка валют, значит такая валюта закончилась
 // - После валюты: стоит перенос строки \n, и после каждой валюты тоже. Это важно для тестов
 // - Данные для первого аргумента должны приходить сразу из двух банков, причем сначала baseCurrencies, потом additionalCurrencies по порядку
+
+const baseCurrencies = ["USD", "EUR"];
+const additionalCurrencies = ["UAH", "RUB", "CNY"];
+
+function availableCurr(arr, missingCurr) {
+  let str = "";
+  arr.length === 0
+    ? (str = "Нет доступных валют")
+    : (str = "Доступные валюты:\n");
+
+  arr.forEach(function (curr, i) {
+    if (curr !== missingCurr) {
+      str += `${curr}\n`;
+    }
+  });
+
+  // Или
+  // for (let i = 0; i < arr.length; i++) {
+  //     if (arr[i] === missingCurr) {
+  //         continue;
+  //     }
+  //     str += `${arr[i]}\n`;
+  // }
+
+  return str;
+}
+
+availableCurr([...baseCurrencies, ...additionalCurrencies], "CNY");

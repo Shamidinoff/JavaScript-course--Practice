@@ -46,3 +46,8 @@ function getFullName(obj) {
 }
 
 console.log(getFullName(person)); // Ожидаемый вывод: 'John Doe'
+
+// Задача 5: Напишите функцию countOccurrences, которая принимает массив строк и возвращает объект, где ключами являются уникальные строки из массива, а значениями - количество их вхождений в массив.
+
+const fruits = ["apple", "banana", "apple", "orange", "apple", "banana"];
+console.log(countOccurrences(fruits)); // Ожидаемый вывод: { apple: 3, banana: 2, orange: 1 }

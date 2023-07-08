@@ -17,39 +17,69 @@ P.S. Здесь есть несколько вариантов решения з
 
 "use strict";
 
-"use strict";
+document.addEventListener("DOMContentLoaded", () => {
+  const movieDB = {
+    movies: [
+      "Логан",
+      "Лига справедливости",
+      "Ла-ла лэнд",
+      "Одержимость",
+      "Скотт Пилигрим против...",
+    ],
+  };
 
-const movieDB = {
-  movies: [
-    "Логан",
-    "Лига справедливости",
-    "Ла-ла лэнд",
-    "Одержимость",
-    "Скотт Пилигрим против...",
-  ],
-};
+  const advertisement = document.querySelectorAll(".promo__adv img");
+  const poster = document.querySelector(".promo__bg");
+  const genre = poster.querySelector(".promo__genre");
+  const movieList = document.querySelector(".promo__interactive-list");
+  const addForm = document.querySelector("form.add");
+  const addInput = addForm.querySelector(".adding__input");
+  const checkbox = addForm.querySelector('[type="checkbox"]');
 
-const advertisement = document.querySelectorAll(".promo__adv img");
-const poster = document.querySelector(".promo__bg");
-const genre = poster.querySelector(".promo__genre");
-const movieList = document.querySelector(".promo__interactive-list");
+  addForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-advertisement.forEach((item) => {
-  item.remove();
-});
+    const newFilm = addInput.value;
+    const favorite = checkbox.checked;
 
-genre.textContent = "драма";
+    movieDB.movies.push(newFilm);
+    sortArr(movieDB.movies);
 
-poster.style.backgroundImage = "url(../Practice_15a/img/bg.jpg)";
+    createMovieList(movieDB.movies, movieList);
 
-movieList.innerHTML = "";
+    event.target.reset();
+  });
 
-movieDB.movies.sort();
+  const deleteAdv = (arr) => {
+    arr.forEach((item) => {
+      item.remove();
+    });
+  };
 
-movieDB.movies.forEach((film, i) => {
-  movieList.innerHTML += `
-    <li class="promo__interactive-item">${i + 1}. ${film}
-        <div class="delete"></div>
-    </li>
-  `;
+  const makeChanges = () => {
+    genre.textContent = "драма";
+
+    poster.style.backgroundImage = "url(../Practice_15a/img/bg.jpg)";
+  };
+
+  const sortArr = (arr) => {
+    arr.sort();
+  };
+
+  function createMovieList(films, parent) {
+    parent.innerHTML = "";
+
+    films.forEach((film, i) => {
+      parent.innerHTML += `
+        <li class="promo__interactive-item">${i + 1}. ${film}
+            <div class="delete"></div>
+        </li>
+      `;
+    });
+  }
+
+  deleteAdv(adv);
+  makeChanges();
+  sortArr(movieDB.movies);
+  createMovieList(movieDB.movies, movieList);
 });

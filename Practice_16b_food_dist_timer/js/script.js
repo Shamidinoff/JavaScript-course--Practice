@@ -97,16 +97,16 @@ window.addEventListener("DOMContentLoaded", function () {
     modal = document.querySelector(".modal"),
     modalCloseBtn = document.querySelector("[data-close]");
 
-  modalTrigger.forEach((btn) => {
-    btn.addEventListener("click", openModal);
-  });
-
   function openModal() {
     modal.classList.add("show");
     modal.classList.remove("hide");
 
     document.body.style.overflow = "hidden";
   }
+
+  modalTrigger.forEach((btn) => {
+    btn.addEventListener("click", openModal);
+  });
 
   function closeModal() {
     modal.classList.add("hide");

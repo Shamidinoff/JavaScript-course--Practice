@@ -39,7 +39,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   // Timer
 
-  const deadline = "2022-06-11";
+  const deadline = "2023-08-15";
 
   function getTimeRemaining(endtime) {
     const t = Date.parse(endtime) - Date.parse(new Date()),
@@ -132,12 +132,15 @@ window.addEventListener("DOMContentLoaded", function () {
 
   const modalTimerId = this.setTimeout(openModal, 5000);
 
-  window.addEventListener("scroll", () => {
+  function showModalByScroll() {
     if (
       window.pageYOffset + document.documentElement.clientHeight >=
       document.documentElement.scrollHeight - 1
     ) {
       openModal();
+      window.removeEventListener("scroll", showModalByScroll);
     }
-  });
+  }
+
+  window.addEventListener("scroll", showModalByScroll);
 });

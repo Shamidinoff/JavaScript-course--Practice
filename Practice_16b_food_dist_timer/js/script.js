@@ -131,4 +131,13 @@ window.addEventListener("DOMContentLoaded", function () {
   });
 
   const modalTimerId = this.setTimeout(openModal, 5000);
+
+  window.addEventListener("scroll", () => {
+    if (
+      window.pageYOffset + document.documentElement.clientHeight >=
+      document.documentElement.scrollHeight - 1
+    ) {
+      openModal();
+    }
+  });
 });

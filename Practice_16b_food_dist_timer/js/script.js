@@ -98,18 +98,20 @@ window.addEventListener("DOMContentLoaded", function () {
     modalCloseBtn = document.querySelector("[data-close]");
 
   modalTrigger.forEach((btn) => {
-    btn.addEventListener("click", function () {
-      modal.classList.add("show");
-      modal.classList.remove("hide");
-      // Либо вариант с toggle - но тогда назначить класс в верстке
-      document.body.style.overflow = "hidden";
-    });
+    btn.addEventListener("click", openModal);
   });
+
+  function openModal() {
+    modal.classList.add("show");
+    modal.classList.remove("hide");
+
+    document.body.style.overflow = "hidden";
+  }
 
   function closeModal() {
     modal.classList.add("hide");
     modal.classList.remove("show");
-    // Либо вариант с toggle - но тогда назначить класс в верстке
+
     document.body.style.overflow = "";
   }
 
@@ -126,4 +128,6 @@ window.addEventListener("DOMContentLoaded", function () {
       closeModal();
     }
   });
+
+  const modalTimerId = this.setTimeout();
 });

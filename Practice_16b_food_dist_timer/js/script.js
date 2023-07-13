@@ -129,5 +129,5 @@ window.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  const modalTimerId = this.setTimeout();
+  const modalTimerId = this.setTimeout(openModal, 3000);
 });

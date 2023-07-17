@@ -143,4 +143,16 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 
   window.addEventListener("scroll", showModalByScroll);
+
+  // Class for card
+
+  class MenuCard {
+    constructor(src, alt, title, descr, price) {
+      this.src = src;
+      this.alt = alt;
+      this.title = title;
+      this.descr = descr;
+      this.price = price;
+    }
+  }
 });

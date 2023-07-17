@@ -147,12 +147,13 @@ window.addEventListener("DOMContentLoaded", function () {
   // Class for card
 
   class MenuCard {
-    constructor(src, alt, title, descr, price) {
+    constructor(src, alt, title, descr, price, parentSelector) {
       this.src = src;
       this.alt = alt;
       this.title = title;
       this.descr = descr;
       this.price = price;
+      this.parent = document.querySelector(parentSelector);
       this.transfer = 27;
       this.changeToUAH();
     }

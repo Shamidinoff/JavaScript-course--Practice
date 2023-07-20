@@ -94,8 +94,7 @@ window.addEventListener("DOMContentLoaded", function () {
   // Modal
 
   const modalTrigger = document.querySelectorAll("[data-modal]"),
-    modal = document.querySelector(".modal"),
-    modalCloseBtn = document.querySelector("[data-close]");
+    modal = document.querySelector(".modal");
 
   modalTrigger.forEach((btn) => {
     btn.addEventListener("click", openModal);
@@ -114,10 +113,8 @@ window.addEventListener("DOMContentLoaded", function () {
     clearInterval(modalTimerId);
   }
 
-  modalCloseBtn.addEventListener("click", closeModal);
-
   modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
+    if (e.target === modal || e.target.getAttribute("data-close")) {
       closeModal();
     }
   });

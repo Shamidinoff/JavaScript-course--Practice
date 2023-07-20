@@ -275,7 +275,8 @@ window.addEventListener("DOMContentLoaded", function () {
     thanksModal.classList.add("modal__dialog");
     thanksModal.innerHTML = `
     <div class="modal__content">
-      <div class="modal__close" data-close></div>
+      <div class="modal__close" data-close>×</div>
+      <div class="modal__title"></div>
     </div>
     `;
   }

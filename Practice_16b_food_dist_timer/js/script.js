@@ -125,8 +125,7 @@ window.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  const modalTimerId = setTimeout(openModal, 300000);
-  // Изменил значение, чтобы не отвлекало
+  const modalTimerId = setTimeout(openModal, 50000);
 
   function showModalByScroll() {
     if (
@@ -139,7 +138,7 @@ window.addEventListener("DOMContentLoaded", function () {
   }
   window.addEventListener("scroll", showModalByScroll);
 
-  // Используем классы для создание карточек меню
+  // Используем классы для создание карточек меню...
 
   class MenuCard {
     constructor(src, alt, title, descr, price, parentSelector, ...classes) {
@@ -250,13 +249,12 @@ window.addEventListener("DOMContentLoaded", function () {
       request.addEventListener("load", () => {
         if (request.status === 200) {
           console.log(request.response);
-          statusMessage.textContent = message.success;
+          showThanksModal(message.success);
           form.reset();
-          setTimeout(() => {
-            statusMessage.remove();
-          }, 2000);
+
+          statusMessage.remove();
         } else {
-          statusMessage.textContent = message.failure;
+          showThanksModal(message.failure);
         }
       });
     });

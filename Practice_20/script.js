@@ -65,4 +65,4 @@ function checkFilms(arr) {
   return arr.every((film) => (film.id || film.id === 0 ? true : false));
 }
 
-const showF = checkFilms(tranformedArray);
+checkFilms(tranformedArray);

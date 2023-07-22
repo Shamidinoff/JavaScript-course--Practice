@@ -32,17 +32,33 @@ const funds = [
 
 // task 2
 
-const getTotalIncomeAmount = (data) => {
-  const negativeAmounts = data.reduce((sum, item) => {
-    if (item.amount < 0) {
-      return sum + item.amount;
-    } else {
-      return sum;
-    }
-  }, 0);
+// const getTotalIncomeAmount = (data) => {
+//   const negativeAmounts = data.reduce((sum, item) => {
+//     if (item.amount < 0) {
+//       return sum + item.amount;
+//     } else {
+//       return sum;
+//     }
+//   }, 0);
 
-  return negativeAmounts;
+//   return negativeAmounts;
+// };
+
+// const negNumbers = getTotalIncomeAmount(funds);
+// console.log(negNumbers);
+
+const getPositiveIncomeAmount = (data) => {
+  return data
+    .filter((item) => item.amount > 0)
+    .reduce((acc, curr) => acc + curr.amount, 0);
 };
 
-const negNumbers = getTotalIncomeAmount(funds);
-console.log(negNumbers);
+getPositiveIncomeAmount(funds);
+
+const getTotalIncomeAmount = (data) => {
+  return data.some((item) => item.amount < 0)
+    ? data.reduce((acc, curr) => acc + curr.amount, 0)
+    : getPositiveIncomeAmount(data);
+};
+
+getTotalIncomeAmount(funds);

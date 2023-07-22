@@ -2,6 +2,10 @@
 // Пример:
 // getPositiveIncomeAmount(funds) => 13300
 
+// 2) Напишите функцию getTotalIncomeAmount, которая тоже принимает этот массив данных. Если хотя бы один из объектов содержит отрицательное значение поля amount, то функция возвращает сумму всех значений. (число) Если таких значений нет - запускается функция getPositiveIncomeAmount с тем же массивом данных.
+// Пример:
+// getTotalIncomeAmount(funds) => -500
+
 const funds = [
   { amount: -1400 },
   { amount: 2400 },
@@ -11,17 +15,32 @@ const funds = [
   { amount: -11400 },
 ];
 
-const getPositiveIncomeAmount = (data) => {
-  const positiveAmounts = data.reduce((sum, item) => {
-    if (item.amount > 0) {
+// const getPositiveIncomeAmount = (data) => {
+//   const positiveAmounts = data.reduce((sum, item) => {
+//     if (item.amount > 0) {
+//       return sum + item.amount;
+//     } else {
+//       return sum;
+//     }
+//   }, 0);
+
+//   return positiveAmounts;
+// };
+
+// const positiveNumbers = getPositiveIncomeAmount(funds);
+// console.log(positiveNumbers);
+
+const getTotalIncomeAmount = (data) => {
+  const negativeAmounts = data.reduce((sum, item) => {
+    if (item.amount < 0) {
       return sum + item.amount;
     } else {
       return sum;
     }
   }, 0);
 
-  return positiveAmounts;
+  return negativeAmounts;
 };
 
-const positiveNumbers = getPositiveIncomeAmount(funds);
-console.log(positiveNumbers);
+const negNumbers = getTotalIncomeAmount(funds);
+console.log(negNumbers);

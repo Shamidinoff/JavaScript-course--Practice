@@ -30,6 +30,8 @@ const funds = [
 // const positiveNumbers = getPositiveIncomeAmount(funds);
 // console.log(positiveNumbers);
 
+// task 2
+
 const getTotalIncomeAmount = (data) => {
   const negativeAmounts = data.reduce((sum, item) => {
     if (item.amount < 0) {

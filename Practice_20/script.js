@@ -55,8 +55,7 @@ function setFilmsIds(arr) {
   });
 }
 
-const filmsIds = setFilmsIds(films);
-console.log(filmsIds);
+setFilmsIds(films);
 
 const tranformedArray = setFilmsIds(films);
 

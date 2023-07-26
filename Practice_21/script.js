@@ -47,7 +47,7 @@ const funds = [
 // const negNumbers = getTotalIncomeAmount(funds);
 // console.log(negNumbers);
 
-// Task.
+// Task..
 
 const getPositiveIncomeAmount = (data) => {
   return data

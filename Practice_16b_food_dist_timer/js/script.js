@@ -208,7 +208,7 @@ window.addEventListener("DOMContentLoaded", function () {
     ".menu .container"
   ).render();
 
-  // Forms exercise ....
+  // Forms exercise
 
   const forms = document.querySelectorAll("form");
   const message = {

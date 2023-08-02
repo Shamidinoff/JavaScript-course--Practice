@@ -14,7 +14,7 @@ function deepCount(a) {
   return count;
 }
 
-// Вариант с методом reduce ...
+// Вариант с методом reduce
 function deepCount(a) {
   return a.reduce(
     (s, e) => s + (Array.isArray(e) ? deepCount(e) : 0),

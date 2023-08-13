@@ -296,4 +296,8 @@ window.addEventListener("DOMContentLoaded", function () {
       closeModal();
     }, 4000);
   }
+
+  // slider
+
+  const slides = document.querySelector("");
 });

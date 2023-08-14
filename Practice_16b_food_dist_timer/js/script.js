@@ -434,4 +434,6 @@ window.addEventListener("DOMContentLoaded", function () {
   function deleteNotDigits(str) {
     return +str.replace(/\D/g, "");
   }
+
+  // Calculator
 });

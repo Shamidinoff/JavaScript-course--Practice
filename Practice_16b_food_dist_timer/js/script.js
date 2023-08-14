@@ -455,4 +455,26 @@ window.addEventListener("DOMContentLoaded", function () {
         (88.36 + 13.4 * weight + 4.8 * height - 5.7 * age) * ratio;
     }
   }
+
+  calcTotal();
+
+  function getStaticInformation(parentSelector, activeClass) {
+    const elements = document.querySelectorAll(`${parentSelector}`);
+
+    document.querySelector(parentSelector).addEventListener("click", (e) => {
+      if (e.target.getAttribute("data-ratio")) {
+        ratio = +e.target.getAttribute("data-ratio");
+      } else {
+        sex = e.target.getAttribute("id");
+      }
+
+      console.log(ratio, sex);
+
+      elements.forEach((elem) => {
+        elem.classList.remove(activeClass);
+      });
+
+      e.target.classList.add(activeClass);
+    });
+  }
 });

@@ -24,7 +24,6 @@ function calc() {
       result.textContent = "____";
       return;
     }
-
     if (sex === "female") {
       result.textContent = Math.round(
         (447.6 + 9.2 * weight + 3.1 * height - 4.3 * age) * ratio
@@ -46,7 +45,6 @@ function calc() {
       if (elem.getAttribute("id") === localStorage.getItem("sex")) {
         elem.classList.add(activeClass);
       }
-
       if (elem.getAttribute("data-ratio") === localStorage.getItem("ratio")) {
         elem.classList.add(activeClass);
       }
@@ -98,7 +96,6 @@ function calc() {
       } else {
         input.style.border = "none";
       }
-
       switch (input.getAttribute("id")) {
         case "height":
           height = +input.value;

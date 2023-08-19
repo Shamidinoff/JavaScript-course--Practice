@@ -18,7 +18,7 @@
 // А теперь напишите функцию композиции composeWithArgs, которая принимает сколько угодно аргументов в начале. Пример:
 //     const add1 = function(a){return a + 1}
 //     const addAll3 = function(a,b,c){return a + b + c}
-//     composeWithArgs(add1,addAll3)(1,2,3)  => Вернет 7
+//     composeWithArgs(add1,addAll3)(1,2,3)  => Вернет 7.
 
 // Task 22
 

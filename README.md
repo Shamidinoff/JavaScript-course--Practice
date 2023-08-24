@@ -1,4 +1,4 @@
-# Petrichenko-JS-React-course
+# JavaScript Course
 
 24.06.2023 - 20.08.2023 // 34 hours of practice
 
